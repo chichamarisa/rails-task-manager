@@ -1,0 +1,12 @@
+<h2>My Tasks</h2>
+
+<ul>
+   <% @tasks.each do |task| %>
+    <ol> <%= check_box("tag", tag.id, {checked: task.completed}) %>
+    <%=  link_to task.title, show_path(task.id) %>
+    <%= link_to 'Delete', delete_path(task.id), method: :delete %>
+  </ol>
+  <% end %>
+</ul>
+
+<%= link_to'💎 Add a new task', new_path %>

@@ -1,0 +1,19 @@
+<h2>Edit your <% @tasks.title %></h2>
+
+<%= form_for(@tasks) do |f| %>
+
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+
+    <%= f.label :details %>
+    <%= f.text_field :details %>
+
+    <%= f.submit %>
+<% end %>
+
+<h4<%= check_box("tag", @tasks.id, {checked: @tasks.completed}) %>> Check your task in here</h4>
+
+<br>
+<%= link_to 'Cancel', tasks_path %>
+
+
